@@ -49,7 +49,10 @@ export default function Home() {
             ))}
           </ol>
 
-          <a className="scroll-cue" href="#about">아래로</a>
+          <a className="scroll-cue" href="#about" aria-label="다음 섹션으로 이동">
+            <span className="scroll-cue__mouse" aria-hidden="true" />
+            <span className="scroll-cue__arrow" aria-hidden="true" />
+          </a>
         </section>
 
         <section id="about" className="about section-shell">
