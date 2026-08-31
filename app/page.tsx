@@ -35,6 +35,12 @@ export default function Home() {
               문제를 이해하는 것부터 구현, 운영, 개선까지<br />
               끝까지 함께합니다.
             </p>
+            <div className="hero__actions">
+              <a href="/kim-hyunho-portfolio.pdf" download="김현호_포트폴리오.pdf">
+                PDF로 다운로드
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
           </div>
 
           <ol className="hero__steps" aria-label="일하는 과정">
