@@ -4,9 +4,7 @@ import { useEffect, useState } from 'react';
 
 const links = [
   ['home', '소개'],
-  ['about', '방향'],
   ['occount', 'Occount'],
-  ['streams', 'Streams'],
   ['contact', '연락'],
 ] as const;
 

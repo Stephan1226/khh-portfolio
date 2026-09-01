@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react';
 import { PortfolioNav } from './portfolio-nav';
 
 const processSteps = [
@@ -6,14 +5,6 @@ const processSteps = [
   ['02', '제품으로 구현하고'],
   ['03', '운영에서 검증하고'],
   ['04', '다시 개선합니다'],
-] as const;
-
-const activity = [
-  ['2026', '.NET Universe: Busan Edition 참여'],
-  ['2025', '링크 데모데이 프로젝트 발표'],
-  ['2025', 'G-STAR 부스 운영'],
-  ['2025', 'SW마이스터고 연합 해커톤 인기상'],
-  ['2025', '정보처리산업기사 취득'],
 ] as const;
 
 export default function Home() {
@@ -49,41 +40,16 @@ export default function Home() {
             ))}
           </ol>
 
-          <a className="scroll-cue" href="#about" aria-label="다음 섹션으로 이동">
+          <a className="scroll-cue" href="#occount" aria-label="주요 프로젝트로 이동">
             <span className="scroll-cue__mouse" aria-hidden="true" />
             <span className="scroll-cue__arrow" aria-hidden="true" />
           </a>
         </section>
 
-        <section id="about" className="about section-shell">
-          <p className="section-index">02 · 방향</p>
-          <div className="about__grid">
-            <div>
-              <h2>업무의 흐름을 읽고,<br />시스템의 구조로 바꿉니다.</h2>
-              <div className="about__principles">
-                <p><strong>문제를 함께 정의합니다.</strong><span>기능보다 먼저 실제 운영의 흐름을 읽습니다.</span></p>
-                <p><strong>구현의 이유를 설명합니다.</strong><span>기술 선택과 구조를 팀이 이해할 수 있게 만듭니다.</span></p>
-                <p><strong>운영에서 끝까지 대응합니다.</strong><span>문제가 생기면 원인을 찾고 다시 개선합니다.</span></p>
-              </div>
-            </div>
-            <div className="about__side">
-              <div className="about__copy">
-                <p>기능 하나를 만드는 데서 멈추지 않고, 그 기능이 실제 운영에서 어떤 흐름을 바꾸는지 생각합니다.</p>
-                <p>구현의 이유를 설명하고 문제가 생기면 원인을 찾아, 팀이 믿고 함께할 수 있는 엔지니어가 되고 싶습니다.</p>
-              </div>
-              <div className="timeline" aria-label="주요 활동">
-                {activity.map(([year, item]) => (
-                  <div key={item}><time>{year}</time><span>{item}</span></div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="occount" className="project project--occount">
           <header className="project-hero section-shell">
             <div className="project-hero__title">
-              <p className="section-index">03 · 주요 프로젝트</p>
+              <p className="section-index">02 · 주요 프로젝트</p>
               <h2>Occount</h2>
               <p className="project-hero__headline">학교 매점의 주문·결제를<br />완전 무인으로</p>
             </div>
@@ -127,41 +93,10 @@ export default function Home() {
                 <strong>현재 운영</strong><span>학생</span><i>→</i><span>키오스크</span><i>→</i><span>Smartro 단말</span><i>→</i><span>결제 완료</span>
               </div>
             </div>
-            <div className="impact__results">
-              <article><strong>약 6개월</strong><span>실제 환경에서 운영</span></article>
-              <article><strong>완전 무인</strong><span>부원은 재고·매장 관리에 집중</span></article>
-              <article><strong>직접 연동</strong><span>결제 단말 비용 구조 개선</span></article>
-            </div>
-          </div>
-
-          <div className="payment section-shell">
-            <div className="payment__copy">
-              <p className="chapter-number">03</p>
-              <h3>VAN 전문 규격을<br />제품의 결제 흐름으로 연결했습니다.</h3>
-              <p>정해진 필드 구조의 요청 전문을 만들고, 승인·실패·취소·타임아웃을 제품 상태로 해석해야 했습니다.</p>
-              <ul>
-                <li>결제 요청 전문 생성·전송</li>
-                <li>응답 데이터 변환과 예외 상태 분기</li>
-                <li>Wireshark 요청·응답 패킷 검증</li>
-              </ul>
-            </div>
-            <div className="sequence" aria-label="Occount 결제 처리 순서">
-              {['키오스크', '주문 서버', '결제 단말', 'VAN 서버'].map((label, index) => (
-                <div className="sequence__lane" key={label}>
-                  <strong>{label}</strong>
-                  <span className={index === 1 ? 'is-signal' : ''} />
-                </div>
-              ))}
-              <div className="sequence__message sequence__message--1"><span>결제 요청</span></div>
-              <div className="sequence__message sequence__message--2"><span>전문 생성·전송</span></div>
-              <div className="sequence__message sequence__message--3"><span>승인 요청</span></div>
-              <div className="sequence__message sequence__message--4"><span>승인·실패·취소 응답</span></div>
-              <div className="sequence__message sequence__message--5"><span>제품 상태로 변환</span></div>
-            </div>
           </div>
 
           <div className="troubleshoot section-shell">
-            <p className="chapter-number">04 · 문제 해결</p>
+            <p className="chapter-number">03 · 문제 해결</p>
             <h3>연속 스캔에서 발생한 중복 요청을<br />상태 기반 제어로 막았습니다.</h3>
             <div className="troubleshoot__steps">
               <article><span>문제</span><strong>연속 스캔 시 동일 상품 API 요청 반복</strong></article>
@@ -180,55 +115,13 @@ await requestProduct(barcode);`}</code></pre>
           </div>
         </section>
 
-        <section id="streams" className="project project--streams">
-          <header className="project-hero section-shell">
-            <div className="project-hero__title">
-              <p className="section-index">04 · 산학 프로젝트</p>
-              <h2>Streams</h2>
-              <p className="project-hero__headline">AI 플레이를 한 화면에서 읽는<br />관전 경험으로</p>
-            </div>
-            <div className="project-hero__summary">
-              <p>부산수학문화관의 피드백을 반영해 Unity 게임 진행 화면과 전시용 관전 경험을 개선했습니다.</p>
-              <dl>
-                <div><dt>기간</dt><dd>2026.03. ~ 진행 중</dd></div>
-                <div><dt>역할</dt><dd>게임 진행 화면 UI/UX 개선</dd></div>
-                <div><dt>기술</dt><dd>Unity · C#</dd></div>
-                <div><dt>의뢰</dt><dd>부산수학문화관 전시물 제작</dd></div>
-              </dl>
-            </div>
-          </header>
-
-          <div className="spectator section-shell">
-            <div className="spectator__copy">
-              <p className="chapter-number">01 · 관전 화면 개선</p>
-              <h3>여러 AI의 플레이 상황을<br />동시에 읽도록 4분할로 개편했습니다.</h3>
-              <p>전시 환경에서는 조작 없이도 각 플레이의 진행 상태를 빠르게 비교할 수 있어야 했습니다.</p>
-              <div className="feedback">
-                <strong>사용자 피드백</strong>
-                <p>여러 AI의 진행 상황을 한눈에 비교하기 어렵다.</p>
-                <strong>개선 방향</strong>
-                <p>하나의 화면을 네 영역으로 나누고 각 플레이 상태를 같은 구조로 배치했습니다.</p>
-              </div>
-            </div>
-            <div className="spectator-screen" aria-label="4분할 AI 관전 화면 개념도">
-              {[68, 44, 81, 57].map((progress, index) => (
-                <article key={progress}>
-                  <span>{index + 1}번 AI</span>
-                  <i style={{ '--progress': `${progress}%` } as CSSProperties} />
-                  <div><b /></div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <footer id="contact" className="closing">
           <div className="closing__signal">
             <span>김현호</span>
             <strong>문제부터 운영까지</strong>
           </div>
           <div className="closing__main">
-            <p className="section-index">05 · 함께 일하기</p>
+            <p className="section-index">03 · 함께 일하기</p>
             <h2>운영까지 책임지는<br />든든한 팀원이 되겠습니다.</h2>
             <p>더 깊이 탐구하고, 더 오래 작동하는 제품을 만들기 위해 조직에 합류하고 싶습니다.</p>
             <div className="closing__links">
