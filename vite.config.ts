@@ -1,5 +1,6 @@
 import { sites } from '@openai/sites-vite-plugin';
 import tailwindcss from '@tailwindcss/postcss';
+import { nitro } from 'nitro/vite';
 import vinext from 'vinext';
 import { defineConfig } from 'vite';
 import hostingConfig from './.openai/hosting.json';
@@ -11,6 +12,7 @@ const { d1, r2 } = hostingConfig;
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
+const isVercel = process.env.VERCEL === '1' || process.env.VERCEL === 'true';
 
 const localBindingConfig = {
   main: 'vinext/server/app-router-entry',
@@ -42,7 +44,10 @@ export default defineConfig(async () => {
   process.env.MINIFLARE_REGISTRY_PATH ??= '.wrangler/registry';
 
   // Wrangler snapshots its log path while the Cloudflare plugin is imported.
-  const { cloudflare } = await import('@cloudflare/vite-plugin');
+  // Vercel uses Nitro instead, so it can generate Vercel's server output.
+  const cloudflare = isVercel
+    ? undefined
+    : (await import('@cloudflare/vite-plugin')).cloudflare;
 
   return {
     css: { postcss: { plugins: [tailwindcss()] } },
@@ -52,10 +57,12 @@ export default defineConfig(async () => {
     plugins: [
       vinext(),
       sites(),
-      cloudflare({
-        viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },
-        config: localBindingConfig,
-      }),
+      isVercel
+        ? nitro()
+        : cloudflare!({
+            viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },
+            config: localBindingConfig,
+          }),
     ],
   };
 });
