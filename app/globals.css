@@ -403,7 +403,7 @@ a { color: inherit; text-decoration: none; }
 @page { size: A4 landscape; margin: 0; }
 @media print {
   html, body { width: 297mm; background: var(--paper); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  .rail, .scroll-cue, .hero__actions { display: none !important; }
+  .rail, .back-to-top, .scroll-cue, .hero__actions { display: none !important; }
   .hero, .project-hero, .screens, .impact, .troubleshoot, .closing {
     min-height: 210mm;
     height: 210mm;
