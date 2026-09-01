@@ -23,7 +23,7 @@ export function PortfolioNav() {
     const update = () => {
       frame = 0;
 
-      const nameFill = Math.min(window.scrollY / (window.innerHeight * 0.55), 1);
+      const nameFill = Math.min(window.scrollY / (window.innerHeight * 0.35), 1);
       root.style.setProperty('--identity-fill', `${nameFill * 100}%`);
 
       const reachedBottom =
