@@ -19,7 +19,7 @@ export default function Home() {
             <h1>
               실제 문제를<br />
               <span className="hero__highlight">제품으로 해결하는</span><br />
-              <span className="hero__identity">엔지니어 김현호입니다.</span>
+              <span className="hero__identity">엔지니어 <strong><span>김현호입니다.</span></strong></span>
             </h1>
             <div className="hero__actions">
               <a href="/kim-hyunho-portfolio.pdf" download="김현호_포트폴리오.pdf">

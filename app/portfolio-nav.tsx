@@ -15,12 +15,16 @@ export function PortfolioNav() {
     const sections = links
       .map(([id]) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
+    const root = document.documentElement;
     if (sections.length === 0) return;
 
     let frame = 0;
 
     const update = () => {
       frame = 0;
+
+      const nameFill = Math.min(window.scrollY / (window.innerHeight * 0.55), 1);
+      root.style.setProperty('--identity-fill', `${nameFill * 100}%`);
 
       const reachedBottom =
         window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
@@ -47,6 +51,7 @@ export function PortfolioNav() {
     window.addEventListener('resize', onScroll);
     return () => {
       if (frame) cancelAnimationFrame(frame);
+      root.style.removeProperty('--identity-fill');
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
