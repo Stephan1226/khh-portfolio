@@ -17,8 +17,9 @@ export default function Home() {
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__content">
             <h1>
-              실제 문제를<br />
-              <span className="hero__highlight">제품으로 해결하는</span><br />
+              <span><span className="hero__keyword">문제</span>를 발견하고,</span><br />
+              <span><span className="hero__keyword">흐름</span>을 만들고,</span><br />
+              <span><span className="hero__keyword">운영</span>을 지키는</span><br />
               <span className="hero__identity">엔지니어 <strong><span>김현호입니다.</span></strong></span>
             </h1>
             <div className="hero__actions">
