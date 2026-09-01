@@ -23,8 +23,13 @@ export default function Home() {
             </h1>
             <div className="hero__actions">
               <a href="/kim-hyunho-portfolio.pdf" download="김현호_포트폴리오.pdf">
-                PDF로 다운로드
-                <span aria-hidden="true">↓</span>
+                포트폴리오 PDF로 다운로드하기
+                <svg className="hero__download-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14a2 2 0 0 0 2-2v-3" />
+                  <path d="M3 16v3a2 2 0 0 0 2 2" />
+                </svg>
               </a>
             </div>
           </div>

@@ -147,7 +147,7 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--signal);
   color: var(--ink);
 }
-.hero__actions span { font-size: 18px; }
+.hero__download-icon { width: 18px; height: 18px; flex: none; }
 .hero__steps {
   margin: 0;
   padding: 0;
