@@ -16,16 +16,11 @@ export default function Home() {
           <div className="hero__glow" aria-hidden="true" />
           <div className="hero__grid" aria-hidden="true" />
           <div className="hero__content">
-            <p className="eyebrow">김현호 포트폴리오 · 2026</p>
             <h1>
               실제 문제를<br />
-              <span>제품으로 해결하는</span><br />
-              엔지니어
+              <span className="hero__highlight">제품으로 해결하는</span><br />
+              <span className="hero__identity">엔지니어 김현호입니다.</span>
             </h1>
-            <p className="hero__copy">
-              문제를 이해하는 것부터 구현, 운영, 개선까지<br />
-              끝까지 함께합니다.
-            </p>
             <div className="hero__actions">
               <a href="/kim-hyunho-portfolio.pdf" download="김현호_포트폴리오.pdf">
                 PDF로 다운로드

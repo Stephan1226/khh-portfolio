@@ -53,20 +53,24 @@ export function PortfolioNav() {
   }, []);
 
   return (
-    <nav className="rail" aria-label="페이지 목차">
-      <a className="rail__brand" href="#home" aria-label="첫 화면으로 이동">KH</a>
-      <div className="rail__links">
-        {links.map(([id, label], index) => (
-          <a
-            key={id}
-            className={active === id ? 'is-active' : undefined}
-            aria-current={active === id ? 'true' : undefined}
-            href={`#${id}`}
-          >
-            <span>{String(index + 1).padStart(2, '0')}</span>{label}
-          </a>
-        ))}
-      </div>
-    </nav>
+    <>
+      <nav className="rail" aria-label="페이지 목차">
+        <div className="rail__links">
+          {links.map(([id, label], index) => (
+            <a
+              key={id}
+              className={active === id ? 'is-active' : undefined}
+              aria-current={active === id ? 'true' : undefined}
+              href={`#${id}`}
+            >
+              <span>{String(index + 1).padStart(2, '0')}</span>{label}
+            </a>
+          ))}
+        </div>
+      </nav>
+      <a className="back-to-top" href="#home" aria-label="맨 위로 이동">
+        <span aria-hidden="true">↑</span>
+      </a>
+    </>
   );
 }
