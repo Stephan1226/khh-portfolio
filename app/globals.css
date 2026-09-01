@@ -309,6 +309,7 @@ a { color: inherit; text-decoration: none; }
 .troubleshoot h3 {
   margin: 0;
   font-size: clamp(38px, 4.5vw, 76px);
+  font-weight: 760;
   line-height: 1.08;
   letter-spacing: -.055em;
 }
@@ -428,9 +429,45 @@ a { color: inherit; text-decoration: none; }
   .screen--main { width: 70%; }
   .screen--side { width: 70%; margin-top: 0; }
   .impact__flow { margin-top: 15mm; }
-  .troubleshoot__steps { margin-top: 12mm; }
-  .troubleshoot__steps article { min-height: 42mm; padding: 6mm; }
-  .troubleshoot pre { margin-top: 8mm; padding: 7mm; }
+  .troubleshoot {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(68mm, .8fr);
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 8mm;
+    align-content: start;
+  }
+  .troubleshoot > .chapter-number,
+  .troubleshoot > h3,
+  .troubleshoot__steps { grid-column: 1 / -1; }
+  .troubleshoot > h3 { max-width: 205mm; }
+  .troubleshoot__steps { margin-top: 10mm; }
+  .troubleshoot__steps article { min-height: 39mm; padding: 6mm; }
+  .troubleshoot__steps strong { font-size: 4.5mm; line-height: 1.4; }
+  .troubleshoot pre {
+    align-self: stretch;
+    margin: 8mm 0 0;
+    padding: 7mm;
+    display: flex;
+    align-items: center;
+    font-size: 3.4mm;
+    line-height: 1.7;
+  }
+  .lesson {
+    align-self: stretch;
+    margin-top: 8mm;
+    padding: 7mm;
+    display: grid;
+    align-content: space-between;
+    gap: 6mm;
+    font-size: 4.2mm;
+    line-height: 1.6;
+  }
+  .lesson strong {
+    display: block;
+    margin-right: 0;
+    font-size: 3.6mm;
+  }
+  .lesson span { display: block; }
   .closing { display: flex; padding: 0; break-after: auto; }
   .closing__signal { flex: 0 0 82mm; }
   .closing__main { flex: 1 1 auto; }

@@ -112,7 +112,10 @@ export default function Home() {
 lastBarcode = barcode;
 requestInFlight = true;
 await requestProduct(barcode);`}</code></pre>
-            <p className="lesson"><strong>배운 점</strong> 외부 결제 서비스 연동에서는 기능뿐 아니라 예외 상태와 중복 입력을 함께 설계해야 제품의 안정성을 지킬 수 있습니다.</p>
+            <p className="lesson">
+              <strong>배운 점</strong>
+              <span>외부 결제 서비스 연동에서는 기능뿐 아니라 예외 상태와 중복 입력을 함께 설계해야 제품의 안정성을 지킬 수 있습니다.</span>
+            </p>
           </div>
         </section>
 
