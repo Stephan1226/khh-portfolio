@@ -823,7 +823,7 @@ a { color: inherit; text-decoration: none; }
   .media-release__facts { margin-top: 5mm; }
   .media-release__facts div { grid-template-columns: 15mm 1fr; gap: 4mm; padding: 3mm 0; }
   .media-release__intro .project-link { margin-top: 5mm; padding: 10px 12px; }
-  .media-release__figure { width: 84%; justify-self: end; }
+  .media-release__figure { width: 84%; justify-self: end; align-self: center; }
   .media-release__facts dt, .media-release__facts dd { font-size: 3.2mm; }
   .media-release__figure img { box-shadow: none; }
   .media-release__flow { grid-template-columns: 1fr 9mm 1fr 9mm 1fr 9mm 1fr; }
