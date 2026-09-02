@@ -118,6 +118,109 @@ await requestProduct(barcode);`}</code></pre>
           </div>
         </section>
 
+        <section id="media-art" className="project project--media">
+          <header className="project-hero project-hero--media section-shell">
+            <div className="project-hero__title">
+              <p className="project-kicker">BUSAN MATHEMATICAL CULTURE CENTER · EXHIBITION</p>
+              <h2>Media<br />Art</h2>
+              <p className="project-hero__headline">부산수학문화관을 위한<br />인터랙티브 전시물</p>
+              <p className="media-hero-subline">카메라가 본 몸을 숫자와 빛으로</p>
+            </div>
+            <div className="project-hero__summary">
+              <p>부산수학문화관 전시물 제작 프로젝트로, 웹캠으로 포착한 사람의 실루엣을 AI와 픽셀 연산으로 해석해 관객이 직접 바꿔보는 경험으로 만들었습니다.</p>
+              <dl>
+                <div><dt>역할</dt><dd>기획 · 인터랙션 · 렌더링 구현</dd></div>
+                <div><dt>형태</dt><dd>Electron 기반 설치 작품</dd></div>
+                <div><dt>입력</dt><dd>웹캠 영상 · 사용자 조작</dd></div>
+                <div><dt>기술</dt><dd>JavaScript · Canvas · MediaPipe · GitHub Actions</dd></div>
+              </dl>
+              <a className="project-link" href="https://github.com/BSSMAscending/media-art-for-windows" target="_blank" rel="noreferrer">
+                프로젝트 저장소 보기 <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </header>
+
+          <div className="media-showcase section-shell">
+            <div className="media-showcase__intro">
+              <p className="chapter-number">01</p>
+              <h3>컴퓨터가 보는<br />내 모습</h3>
+              <p>카메라가 인식한 사람 영역만 남기고, 픽셀의 밝기 데이터를 서로 다른 규칙으로 변환합니다. 관객은 같은 움직임이 숫자와 형태로 달라지는 과정을 바로 확인할 수 있습니다.</p>
+            </div>
+            <figure className="media-showcase__figure">
+              <img src="/projects/media-art-for-window.png" alt="사람의 실루엣이 0과 1 문자로 표현되고 오른쪽에서 미디어 아트 모드를 선택하는 화면" width="3600" height="2338" loading="eager" />
+              <figcaption><strong>Binary mode</strong><span>실시간 실루엣과 선택한 변환 모드를 한 화면에 보여주는 실제 작업 화면</span></figcaption>
+            </figure>
+          </div>
+
+          <div className="media-principle section-shell">
+            <div className="media-principle__headline">
+              <p className="chapter-number">02</p>
+              <h3>움직임이 데이터가 되고,<br />데이터가 다시 장면이 됩니다.</h3>
+              <p>복잡한 영상을 그대로 보여주는 대신, 인식·계산·표현의 단계를 분리해 관객이 이미지 처리의 원리를 읽을 수 있도록 구성했습니다.</p>
+            </div>
+            <div className="media-flow" aria-label="미디어 아트 처리 흐름">
+              <article><span>01 / INPUT</span><strong>Camera</strong><p>웹캠에서 실시간 프레임을 받습니다.</p></article>
+              <i aria-hidden="true">→</i>
+              <article><span>02 / MASK</span><strong>Person Segmentation</strong><p>AI가 사람과 배경을 픽셀 단위로 나눕니다.</p></article>
+              <i aria-hidden="true">→</i>
+              <article><span>03 / MATH</span><strong>Luminance</strong><p><code>L = 0.299R + 0.587G + 0.114B</code>로 밝기를 계산합니다.</p></article>
+              <i aria-hidden="true">→</i>
+              <article className="media-flow__accent"><span>04 / OUTPUT</span><strong>Media Art</strong><p>밝기값을 0·1, 흑백, 숫자 패턴으로 바꿉니다.</p></article>
+            </div>
+          </div>
+
+          <div className="media-modes section-shell">
+            <div className="media-modes__intro">
+              <p className="chapter-number">03</p>
+              <h3>같은 몸,<br />네 가지 해석</h3>
+              <p>모드를 바꾸면 픽셀을 읽는 규칙이 바뀝니다. 결과를 선택하는 경험 자체가 이미지 처리 실험이 되도록 설계했습니다.</p>
+            </div>
+            <div className="media-mode-grid">
+              <article><span>01</span><h4>원본</h4><strong>Cyberpunk silhouette</strong><p>사이안 글로우와 0·1 표현으로 미래적인 분위기를 만듭니다.</p></article>
+              <article><span>02</span><h4>흑백</h4><strong>Minimal silhouette</strong><p>텍스트를 걷어내고 사람의 윤곽만 선명하게 남깁니다.</p></article>
+              <article><span>03</span><h4>바이너리</h4><strong>0 / 1 matrix</strong><p>밝기 기준으로 각 지점을 0 또는 1로 양자화합니다.</p></article>
+              <article><span>04</span><h4>숫자</h4><strong>0 — 9 grayscale</strong><p>밝기를 10단계로 나누어 숫자의 밀도로 표현합니다.</p></article>
+            </div>
+          </div>
+
+          <div className="media-release section-shell">
+            <div className="media-release__intro">
+              <p className="chapter-number">04</p>
+              <h3>업데이트가 필요한 순간에도<br />전시를 멈추지 않도록.</h3>
+              <p>GitHub Release에 새 버전을 올리면 설치된 Windows 앱이 업데이트를 확인하고, 앱 안에서 다운로드 상태와 재시작 시점을 안내합니다.</p>
+              <dl className="media-release__facts">
+                <div><dt>감지</dt><dd>패키징된 Windows 앱이 실행 5초 후 새 릴리즈 확인</dd></div>
+                <div><dt>안내</dt><dd>다운로드 중 · 다운로드 완료 상태를 전시 화면에 표시</dd></div>
+                <div><dt>적용</dt><dd>‘지금 재시작’ 선택 시 업데이트 설치 후 앱 재실행</dd></div>
+              </dl>
+              <a className="project-link project-link--release" href="https://github.com/BSSMAscending/media-art-for-windows-releases" target="_blank" rel="noreferrer">
+                릴리즈 저장소 보기 <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <figure className="media-release__figure">
+              <img src="/projects/media-art-release.png" alt="Busan Mathematical Culture Center Media Art Windows 앱 릴리즈와 설치 파일이 GitHub Releases에 게시된 화면" width="3600" height="2016" loading="eager" />
+              <figcaption><strong>GitHub Releases</strong><span>v1.0.2 Windows 설치 파일과 릴리즈 자산이 자동으로 게시된 실제 화면</span></figcaption>
+            </figure>
+            <div className="media-release__flow" aria-label="미디어 아트 배포와 자동 업데이트 흐름">
+              <span>태그 push <b>v1.0.2</b></span><i aria-hidden="true">→</i><span>Windows installer build</span><i aria-hidden="true">→</i><span>GitHub Releases publish</span><i aria-hidden="true">→</i><span>앱 내 다운로드 · 재시작</span>
+            </div>
+          </div>
+
+          <div className="media-troubleshoot section-shell">
+            <p className="chapter-number">05</p>
+            <h3>전시장에서 계속 반응하도록<br />렌더링 구조를 다듬었습니다.</h3>
+            <div className="media-troubleshoot__grid">
+              <article><span>실시간성</span><strong>렌더링과 AI 추론 주기를 분리</strong><p>화면은 30fps를 목표로 갱신하고, 사람 인식은 12fps로 조절해 반응성과 계산량의 균형을 맞췄습니다.</p></article>
+              <article><span>조작 경험</span><strong>네이티브 버튼으로 모드 선택</strong><p>키보드와 마우스로 접근할 수 있고, 선택된 상태를 시각·접근성 정보로 함께 노출했습니다.</p></article>
+              <article><span>전시 환경</span><strong>카메라와 화면을 한 기기 안에서 처리</strong><p>외부 서버에 영상을 보내지 않고 로컬에서 인식과 Canvas 렌더링을 수행하도록 구성했습니다.</p></article>
+            </div>
+            <p className="lesson lesson--media">
+              <strong>작품으로 배운 점</strong>
+              <span>인터랙티브한 결과는 시각 효과만으로 완성되지 않습니다. 입력을 안정적으로 받고, 계산 단계를 설명하며, 관객의 선택이 지연 없이 결과에 닿도록 전체 흐름을 설계해야 합니다.</span>
+            </p>
+          </div>
+        </section>
+
         <section id="homeserver" className="project project--homeserver">
           <header className="project-hero project-hero--server section-shell">
             <div className="project-hero__title">

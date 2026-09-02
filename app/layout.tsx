@@ -3,14 +3,14 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: '김현호',
-  description: '문제를 발견하고 흐름을 만들며 운영을 지키는 김현호의 개발자 포트폴리오입니다.',
+  description: '문제를 발견하고 흐름을 만들며 운영을 지키는 김현호의 개발자 포트폴리오입니다. 인터랙티브 미디어 아트와 개인 인프라 프로젝트를 함께 소개합니다.',
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     shortcut: '/favicon.svg',
   },
   openGraph: {
     title: '김현호 | 문제를 발견하고, 흐름을 만들고, 운영을 지키는 엔지니어',
-    description: '문제를 발견하고 흐름을 만들며 운영을 지키는 김현호의 개발자 포트폴리오입니다.',
+    description: '문제를 발견하고 흐름을 만들며 운영을 지키는 김현호의 개발자 포트폴리오입니다. 인터랙티브 미디어 아트와 개인 인프라 프로젝트를 함께 소개합니다.',
     type: 'website',
     locale: 'ko_KR',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: '김현호 개발자 포트폴리오' }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '김현호 | 문제를 발견하고, 흐름을 만들고, 운영을 지키는 엔지니어',
-    description: '문제를 발견하고 흐름을 만들며 운영을 지키는 김현호의 개발자 포트폴리오입니다.',
+    description: '문제를 발견하고 흐름을 만들며 운영을 지키는 김현호의 개발자 포트폴리오입니다. 인터랙티브 미디어 아트와 개인 인프라 프로젝트를 함께 소개합니다.',
     images: ['/og.png'],
   },
 };

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 const links = [
   ['home', '소개'],
   ['occount', 'Occount'],
+  ['media-art', 'Media Art'],
   ['homeserver', 'Home Server'],
   ['contact', '연락'],
 ] as const;
