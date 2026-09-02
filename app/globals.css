@@ -790,13 +790,14 @@ a { color: inherit; text-decoration: none; }
   .project-hero__title h2 { font-size: 31mm; }
   .project-hero__headline { margin-top: 10mm; font-size: 10mm; }
   .project-hero__summary > p { margin-bottom: 10mm; font-size: 5.5mm; }
-  .screens { grid-template-columns: 58mm 1fr; gap: 7mm 12mm; }
+  .screens { grid-template-columns: 58mm 1fr; gap: 7mm 12mm; align-content: center; }
   .screens__intro { position: static; }
   .screens__intro h3, .impact h3, .troubleshoot h3 { font-size: 11mm; }
   .screens__intro > p:last-child { font-size: 4mm; }
   .screen img { box-shadow: none; }
-  .screen--main { width: 70%; }
-  .screen--side { width: 70%; margin-top: 0; }
+  .screen--main,
+  .screen--side { width: 70%; justify-self: center; }
+  .screen--side { margin-top: 0; }
   .impact__flow { margin-top: 15mm; }
   .media-showcase { grid-template-columns: 58mm 1fr; gap: 7mm 12mm; }
   .media-showcase__intro,
@@ -812,10 +813,17 @@ a { color: inherit; text-decoration: none; }
   .media-mode-grid article { min-height: 42mm; padding: 5mm; }
   .media-mode-grid h4 { margin-top: 5mm; font-size: 7mm; }
   .media-mode-grid p { font-size: 3.3mm; }
-  .media-release { grid-template-columns: 62mm 1fr; grid-template-areas: "intro figure" "flow flow"; gap: 7mm 10mm; }
-  .media-release__intro > p:not(.chapter-number) { font-size: 4mm; }
-  .media-release__facts { margin-top: 7mm; }
-  .media-release__facts div { grid-template-columns: 15mm 1fr; gap: 4mm; padding: 4mm 0; }
+  .media-release {
+    grid-template-columns: 62mm 1fr;
+    grid-template-areas: "intro figure" "flow flow";
+    gap: 5mm 10mm;
+    align-content: center;
+  }
+  .media-release__intro > p:not(.chapter-number) { font-size: 3.6mm; line-height: 1.55; }
+  .media-release__facts { margin-top: 5mm; }
+  .media-release__facts div { grid-template-columns: 15mm 1fr; gap: 4mm; padding: 3mm 0; }
+  .media-release__intro .project-link { margin-top: 5mm; padding: 10px 12px; }
+  .media-release__figure { width: 84%; justify-self: end; }
   .media-release__facts dt, .media-release__facts dd { font-size: 3.2mm; }
   .media-release__figure img { box-shadow: none; }
   .media-release__flow { grid-template-columns: 1fr 9mm 1fr 9mm 1fr 9mm 1fr; }
