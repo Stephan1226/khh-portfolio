@@ -903,7 +903,7 @@ a { color: inherit; text-decoration: none; }
   .screens__intro { position: static; }
   .screen--side { margin-top: 0; }
   .media-showcase, .media-modes { grid-template-columns: 1fr; gap: 64px; }
-  .media-showcase__intro, .media-modes__intro { position: static; }
+  .media-showcase__intro, .media-modes .media-modes__intro { position: static; }
   .media-flow { grid-template-columns: 1fr; gap: 12px; }
   .media-flow > i { transform: rotate(90deg); min-height: 18px; }
   .media-mode-grid { grid-template-columns: 1fr; }
@@ -938,4 +938,9 @@ a { color: inherit; text-decoration: none; }
   .closing__signal { min-height: 260px; padding: 40px 24px; }
   .closing__signal strong { max-width: none; }
   .closing__main { padding: 92px 24px 110px; }
+}
+
+/* Touch devices should keep section headings in the normal document flow. */
+@media (hover: none) and (pointer: coarse) {
+  .media-modes .media-modes__intro { position: static; }
 }
