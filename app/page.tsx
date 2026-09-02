@@ -75,7 +75,7 @@ export default function Home() {
               <figcaption>키오스크 주문·결제 화면</figcaption>
             </figure>
             <figure className="screen screen--side">
-              <img src="/projects/occount-mdm.png" alt="Occount 키오스크 기기 관리 화면" width="1600" height="900" loading="lazy" />
+              <img src="/projects/occount-mdm.png" alt="Occount 키오스크 기기 관리 화면" width="1600" height="900" loading="eager" />
               <figcaption>Headwind MDM 기반 기기 관리 화면</figcaption>
             </figure>
           </div>
@@ -246,15 +246,15 @@ await requestProduct(barcode);`}</code></pre>
               <p>하나의 물리 서버 위에 서비스별 실행 환경을 분리하고, 외부 요청과 데이터 저장 흐름을 연결했습니다.</p>
             </div>
             <figure className="server-screen server-screen--proxmox">
-              <img src="/projects/home-server-proxmox.png" alt="여러 VM과 LXC 컨테이너가 실행 중인 Proxmox 대시보드" width="3600" height="2010" loading="lazy" />
+              <img src="/projects/home-server-proxmox.png" alt="여러 VM과 LXC 컨테이너가 실행 중인 Proxmox 대시보드" width="3600" height="2010" loading="eager" />
               <figcaption><strong>가상화</strong><span>Proxmox에서 VM과 LXC 워크로드를 분리해 관리</span></figcaption>
             </figure>
             <figure className="server-screen server-screen--proxy">
-              <img src="/projects/home-server-proxy.png" alt="도메인별 서비스를 라우팅하는 Nginx Proxy Manager 화면" width="3600" height="1764" loading="lazy" />
+              <img src="/projects/home-server-proxy.png" alt="도메인별 서비스를 라우팅하는 Nginx Proxy Manager 화면" width="3600" height="1764" loading="eager" />
               <figcaption><strong>라우팅</strong><span>Nginx Proxy Manager로 도메인별 요청을 각 서비스에 전달</span></figcaption>
             </figure>
             <figure className="server-screen server-screen--storage">
-              <img src="/projects/home-server-truenas.png" alt="SMB 공유가 구성된 TrueNAS 관리 화면" width="3600" height="1996" loading="lazy" />
+              <img src="/projects/home-server-truenas.png" alt="SMB 공유가 구성된 TrueNAS 관리 화면" width="3600" height="1996" loading="eager" />
               <figcaption><strong>스토리지</strong><span>TrueNAS 공유 스토리지로 데이터를 별도 관리</span></figcaption>
             </figure>
           </div>
