@@ -874,7 +874,7 @@ a { color: inherit; text-decoration: none; }
   .while-delivery__intro dl { margin-top: 7mm; }
   .while-delivery__intro dl div { grid-template-columns: 15mm 1fr; gap: 4mm; padding: 4mm 0; }
   .while-delivery__intro dt, .while-delivery__intro dd { font-size: 3.2mm; }
-  .while-delivery__figure img { max-height: 80mm; width: auto; max-width: 100%; margin-left: auto; box-shadow: none; }
+  .while-delivery__figure img { width: 100%; height: auto; max-width: none; margin-left: 0; box-shadow: none; }
   .while-delivery__facts article { min-height: 30mm; padding: 3mm; }
   .while-delivery__facts strong { font-size: 3.4mm; }
   .while-delivery__facts p { font-size: 2.4mm; }
