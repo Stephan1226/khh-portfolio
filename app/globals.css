@@ -621,6 +621,106 @@ a { color: inherit; text-decoration: none; }
 .server-troubleshoot__grid strong { font-size: 20px; line-height: 1.45; }
 .lesson--server { margin-top: 48px; background: #10171b; color: var(--white); }
 
+.project--while { background: #f7f3fa; }
+.project-hero--while { background: #261b3d; color: var(--white); }
+.project-hero--while .project-kicker,
+.project-hero--while dt { color: #f3a8d8; }
+.project-hero--while .project-hero__title h2 { color: #ffd2eb; font-size: clamp(76px, 12vw, 190px); }
+.project-hero--while .project-hero__headline { color: #f6e6fb; }
+.project-hero--while .project-hero__summary > p { color: #ded0e8; }
+.project-hero--while dl { border-top-color: rgba(255, 235, 249, .44); }
+.project-hero--while dl div { border-bottom-color: rgba(255, 235, 249, .17); }
+.project-link--while { border-color: #f3a8d8; color: #ffd2eb; }
+.project-link--while:hover { background: #ffd2eb; border-color: #ffd2eb; color: #261b3d; }
+
+.while-play {
+  display: grid;
+  grid-template-columns: minmax(230px, .36fr) minmax(0, .64fr);
+  grid-template-areas: "intro hero" "intro gameplay";
+  gap: 50px 6vw;
+  align-items: start;
+  background: #f7f3fa;
+}
+.while-play__intro { grid-area: intro; position: sticky; top: 88px; }
+.while-play h3,
+.while-flow h3,
+.while-delivery h3 {
+  margin: 0;
+  font-size: clamp(38px, 4.5vw, 76px);
+  font-weight: 760;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+.while-play .chapter-number,
+.while-flow .chapter-number,
+.while-delivery .chapter-number { color: #a84784; }
+.while-play__intro > p:last-child,
+.while-delivery__intro > p:not(.chapter-number) {
+  margin: 28px 0 0;
+  color: #6d5f72;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.while-figure { min-width: 0; margin: 0; }
+.while-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d7c7df;
+  box-shadow: 0 26px 70px rgba(59, 34, 72, .16);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.while-figure:hover img { transform: translateY(-6px); box-shadow: 0 36px 90px rgba(59, 34, 72, .22); }
+.while-figure figcaption,
+.while-delivery__figure figcaption { margin-top: 14px; display: grid; gap: 5px; }
+.while-figure figcaption strong,
+.while-delivery__figure figcaption strong { color: #a84784; font: 800 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; }
+.while-figure figcaption span,
+.while-delivery__figure figcaption span { color: #6d5f72; font-size: 13px; line-height: 1.5; }
+.while-figure--hero { grid-area: hero; }
+.while-figure--gameplay { grid-area: gameplay; width: 86%; justify-self: end; }
+
+.while-flow { background: #1d1430; color: var(--white); }
+.while-flow__headline { max-width: 1080px; }
+.while-flow__headline > p:last-child { max-width: 790px; margin: 32px 0 0; color: #c8b9d3; font-size: 19px; line-height: 1.7; }
+.while-flow__steps {
+  margin-top: 88px;
+  display: grid;
+  grid-template-columns: minmax(130px, .85fr) 34px minmax(140px, 1fr) 34px minmax(140px, 1fr) 34px minmax(140px, 1fr);
+  align-items: stretch;
+}
+.while-flow__steps > i { display: grid; place-items: center; color: #836b95; font-size: 24px; font-style: normal; }
+.while-flow__steps article { min-height: 205px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid #5b466c; background: rgba(255,255,255,.025); }
+.while-flow__steps article > span { margin-bottom: auto; color: #b896ce; font: 800 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; }
+.while-flow__steps strong { font-size: clamp(19px, 1.5vw, 26px); line-height: 1.15; }
+.while-flow__steps p { margin: 12px 0 0; color: #cbbdd4; font-size: 13px; line-height: 1.55; }
+.while-flow__steps .while-flow__accent { border-color: #f3a8d8; background: #f3a8d8; color: #261b3d; }
+.while-flow__steps .while-flow__accent > span,
+.while-flow__steps .while-flow__accent p { color: #6e2757; }
+
+.while-delivery {
+  display: grid;
+  grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr);
+  grid-template-areas: "intro figure" "facts facts";
+  gap: 76px 6vw;
+  align-items: start;
+  background: #f1d5e7;
+  color: #261b3d;
+}
+.while-delivery__intro { grid-area: intro; }
+.while-delivery__intro > p:not(.chapter-number) { color: #6d4262; }
+.while-delivery__intro dl { margin: 38px 0 0; border-top: 1px solid #b880a4; }
+.while-delivery__intro dl div { display: grid; grid-template-columns: 58px 1fr; gap: 18px; padding: 15px 0; border-bottom: 1px solid #d2a9c2; }
+.while-delivery__intro dt { color: #a84784; font-size: 13px; font-weight: 800; }
+.while-delivery__intro dd { margin: 0; font-size: 14px; line-height: 1.5; }
+.while-delivery__figure { grid-area: figure; margin: 0; }
+.while-delivery__figure img { display: block; width: 100%; height: auto; border: 1px solid #c38bab; box-shadow: 0 24px 60px rgba(73, 27, 58, .16); }
+.while-delivery__facts { grid-area: facts; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #b880a4; border: 1px solid #b880a4; }
+.while-delivery__facts article { min-height: 230px; padding: 28px; display: grid; align-content: space-between; background: #f1d5e7; }
+.while-delivery__facts span { color: #a84784; font-size: 13px; font-weight: 800; }
+.while-delivery__facts strong { font-size: 21px; line-height: 1.35; }
+.while-delivery__facts p { margin: 14px 0 0; color: #6d4262; font-size: 15px; line-height: 1.65; }
+
 .closing {
   min-height: 100svh;
   display: grid;
@@ -648,7 +748,7 @@ a { color: inherit; text-decoration: none; }
 @media print {
   html, body { width: 297mm; background: var(--paper); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   .rail, .back-to-top, .scroll-cue, .hero__actions { display: none !important; }
-  .hero, .project-hero, .screens, .impact, .troubleshoot, .server-screens, .server-architecture, .server-troubleshoot, .media-showcase, .media-principle, .media-modes, .media-release, .media-troubleshoot, .closing {
+  .hero, .project-hero, .screens, .impact, .troubleshoot, .server-screens, .server-architecture, .server-troubleshoot, .media-showcase, .media-principle, .media-modes, .media-release, .media-troubleshoot, .while-play, .while-flow, .while-delivery, .closing {
     min-height: 210mm;
     height: 210mm;
     overflow: hidden;
@@ -758,6 +858,24 @@ a { color: inherit; text-decoration: none; }
   .server-troubleshoot__grid article { min-height: 44mm; padding: 6mm; }
   .server-troubleshoot__grid strong { font-size: 4.5mm; }
   .lesson--server { margin-top: 8mm; }
+  .project-hero--while .project-hero__title h2 { font-size: 31mm; }
+  .while-play { grid-template-columns: 58mm 1fr; gap: 7mm 12mm; }
+  .while-play__intro { position: static; }
+  .while-play h3, .while-flow h3, .while-delivery h3 { font-size: 10mm; }
+  .while-play__intro > p:last-child, .while-delivery__intro > p:not(.chapter-number) { font-size: 4mm; }
+  .while-figure img, .while-delivery__figure img { box-shadow: none; }
+  .while-figure--gameplay { width: 84%; }
+  .while-flow__headline > p:last-child { font-size: 4mm; }
+  .while-flow__steps { margin-top: 12mm; grid-template-columns: 1fr 9mm 1.1fr 9mm 1.1fr 9mm 1fr; }
+  .while-flow__steps article { min-height: 44mm; padding: 5mm; }
+  .while-flow__steps p { font-size: 3.1mm; }
+  .while-delivery { grid-template-columns: 62mm 1fr; grid-template-areas: "intro figure" "facts facts"; gap: 7mm 10mm; }
+  .while-delivery__intro dl { margin-top: 7mm; }
+  .while-delivery__intro dl div { grid-template-columns: 15mm 1fr; gap: 4mm; padding: 4mm 0; }
+  .while-delivery__intro dt, .while-delivery__intro dd { font-size: 3.2mm; }
+  .while-delivery__facts article { min-height: 43mm; padding: 5mm; }
+  .while-delivery__facts strong { font-size: 4.2mm; }
+  .while-delivery__facts p { font-size: 3.2mm; }
   .closing { display: flex; padding: 0; break-after: auto; }
   .closing__signal { flex: 0 0 82mm; }
   .closing__main { flex: 1 1 auto; }
@@ -805,6 +923,15 @@ a { color: inherit; text-decoration: none; }
   .server-troubleshoot__grid article { min-height: 150px; }
   .media-troubleshoot__grid { grid-template-columns: 1fr; }
   .media-troubleshoot__grid article { min-height: 170px; }
+  .while-play { grid-template-columns: 1fr; grid-template-areas: "intro" "hero" "gameplay"; gap: 64px; }
+  .while-play__intro { position: static; }
+  .while-figure--gameplay { width: 100%; }
+  .while-flow__steps { grid-template-columns: 1fr; gap: 12px; }
+  .while-flow__steps > i { transform: rotate(90deg); min-height: 18px; }
+  .while-flow__steps article { min-height: 170px; }
+  .while-delivery { grid-template-columns: 1fr; grid-template-areas: "intro" "figure" "facts"; gap: 44px; }
+  .while-delivery__facts { grid-template-columns: 1fr; }
+  .while-delivery__facts article { min-height: 170px; }
   .closing { grid-template-columns: 1fr; }
   .closing__signal { min-height: 260px; padding: 40px 24px; }
   .closing__signal strong { max-width: none; }

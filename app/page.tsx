@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { PortfolioNav } from './portfolio-nav';
 
 const processSteps = [
@@ -310,6 +311,83 @@ await requestProduct(barcode);`}</code></pre>
               <strong>배운 점</strong>
               <span>서비스 운영에서는 애플리케이션 코드뿐 아니라 요청이 서버에 도달하고 데이터가 보존되는 전체 경로를 함께 이해해야 합니다.</span>
             </p>
+          </div>
+        </section>
+
+        <section id="while" className="project project--while">
+          <header className="project-hero project-hero--while section-shell">
+            <div className="project-hero__title">
+              <p className="project-kicker">G-STAR 2025 · AI VISUAL NOVEL</p>
+              <h2>while</h2>
+              <p className="project-hero__headline">선택과 감정에 반응하는<br />나만의 연애 시뮬레이션</p>
+            </div>
+            <div className="project-hero__summary">
+              <p>고정된 대본을 따라가는 대신, 플레이어의 선택·표정·취향을 바탕으로 다음 장면을 만드는 AI 미연시를 구현했습니다.</p>
+              <dl>
+                <div><dt>역할</dt><dd>프론트엔드 · API v2 마이그레이션 · 안정성 개선</dd></div>
+                <div><dt>형태</dt><dd>G-STAR 2025 시연 프로젝트</dd></div>
+                <div><dt>경험</dt><dd>선택 · 감정 · 플레이 시간에 따라 달라지는 진행</dd></div>
+                <div><dt>기술</dt><dd>React · TypeScript · FastAPI · Gemini · face-api.js</dd></div>
+              </dl>
+              <a className="project-link project-link--while" href="https://github.com/Life-in-another-world-starting-with-VN" target="_blank" rel="noreferrer">
+                GitHub 조직 열기 <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </header>
+
+          <div className="while-play section-shell">
+            <div className="while-play__intro">
+              <p className="chapter-number">01</p>
+              <h3>플레이어가 남긴 반응이<br />다음 장면의 재료가 됩니다.</h3>
+              <p>성격과 장르를 고르는 시작 단계부터 대화의 선택지, 웹캠으로 읽은 감정 상태까지 게임의 진행 데이터로 연결했습니다.</p>
+            </div>
+            <figure className="while-figure while-figure--hero">
+              <Image src="/projects/while-hero.png" alt="세 명의 캐릭터와 시작 화면이 있는 While 게임의 메인 이미지" width={1344} height={768} />
+              <figcaption><strong>START</strong><span>선택한 성격과 장르를 바탕으로 새로운 게임을 시작</span></figcaption>
+            </figure>
+            <figure className="while-figure while-figure--gameplay">
+              <Image src="/projects/while-gameplay.png" alt="캐릭터 대화와 선택지가 표시되고 현재 감정 상태가 보이는 While 게임 화면" width={3600} height={2076} />
+              <figcaption><strong>PLAY</strong><span>대화와 선택, 감정 상태를 한 장면 안에서 확인하는 실제 플레이 화면</span></figcaption>
+            </figure>
+          </div>
+
+          <div className="while-flow section-shell">
+            <div className="while-flow__headline">
+              <p className="chapter-number">02</p>
+              <h3>한 번의 선택이 끝이 아니라,<br />다음 장면을 만드는 입력이 되도록.</h3>
+              <p>게임 생성부터 장면 진행까지 API v2 흐름으로 정리해, 프론트엔드가 현재 장면·선택·감정 데이터와 플레이 시간을 일관되게 전달하도록 구성했습니다.</p>
+            </div>
+            <div className="while-flow__steps" aria-label="While 게임 진행 흐름">
+              <article><span>01 / SETUP</span><strong>취향 설정</strong><p>성격, 장르, 플레이 시간을 받아 게임과 첫 세션을 만듭니다.</p></article>
+              <i aria-hidden="true">→</i>
+              <article><span>02 / PLAY</span><strong>장면 진행</strong><p>대화 또는 선택 장면에 맞춰 다음 요청을 보냅니다.</p></article>
+              <i aria-hidden="true">→</i>
+              <article><span>03 / SIGNAL</span><strong>감정 · 시간</strong><p>웹캠 감정 값과 일시정지를 제외한 경과 시간을 함께 기록합니다.</p></article>
+              <i aria-hidden="true">→</i>
+              <article className="while-flow__accent"><span>04 / STORY</span><strong>다음 장면</strong><p>AI가 상황과 인물을 유지한 새 장면·배경을 반환합니다.</p></article>
+            </div>
+          </div>
+
+          <div className="while-delivery section-shell">
+            <div className="while-delivery__intro">
+              <p className="chapter-number">03</p>
+              <h3>시연에서 끊기지 않도록,<br />흐름과 예외를 함께 다듬었습니다.</h3>
+              <p>UI를 구현하는 데서 끝나지 않고 인증, 이미지 생성, 시연 환경처럼 실제 체험을 멈출 수 있는 지점들을 정리했습니다.</p>
+              <dl>
+                <div><dt>인증</dt><dd>인증 페이지·보호된 라우트와 토큰 갱신 흐름 구현</dd></div>
+                <div><dt>진행</dt><dd>엔터·스페이스 입력으로 대화 진행, 데모 타이머 조정</dd></div>
+                <div><dt>안정성</dt><dd>리프레시 토큰 동시성 문제와 배경 이미지 재생성 비용 개선</dd></div>
+              </dl>
+            </div>
+            <figure className="while-delivery__figure">
+              <Image src="/projects/while-api-v2.png" alt="게임 생성 API v2 요청과 장면 데이터를 확인하는 테스트 화면" width={2142} height={1368} />
+              <figcaption><strong>API V2</strong><span>취향 설정으로 게임을 생성하고 세션·장면 데이터를 받는 API 흐름 검증</span></figcaption>
+            </figure>
+            <div className="while-delivery__facts">
+              <article><span>감정 인식</span><strong>표정을 장면 진행 데이터로</strong><p>face-api.js 기반 훅과 상태 위젯으로 현재 인식값을 플레이 중에도 확인할 수 있게 했습니다.</p></article>
+              <article><span>캐릭터 일관성</span><strong>주요 인물과 이미지 연결 유지</strong><p>장면 응답에 캐릭터 이미지 정보를 포함하고, 게임별 주요 캐릭터 선택 흐름을 보완했습니다.</p></article>
+              <article><span>데모 운영</span><strong>짧은 체험 시간에 맞춘 진행</strong><p>시연 타이머와 설문, QR 진입 흐름을 조정해 현장 체험을 준비했습니다.</p></article>
+            </div>
           </div>
         </section>
 

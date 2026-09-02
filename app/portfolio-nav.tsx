@@ -7,6 +7,7 @@ const links = [
   ['occount', 'Occount'],
   ['media-art', 'Media Art'],
   ['homeserver', 'Home Server'],
+  ['while', 'While'],
   ['contact', '연락'],
 ] as const;
 
